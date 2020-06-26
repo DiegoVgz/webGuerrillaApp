@@ -1,0 +1,96 @@
+
+ <ion-router-outlet id="main"></ion-router-outlet>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="openEnd()">
+      <ion-icon  name="menu"></ion-icon>
+    </ion-button> 
+    
+
+    
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content #pageTop>
+
+  <ion-menu side="start"  id="menu"  contentId="main">
+    <ion-header>
+      <ion-toolbar color="#e20d0d">
+        <ion-title style="color:#e20d0d;">Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item (click)="goToMenu()">Profile</ion-item>
+        <ion-item (click)="goToRanking()">Ranking</ion-item>
+        <ion-item (click)="goToSettings()">Settings</ion-item>
+        <ion-item (click)="goOut()">Logout</ion-item>
+        <ion-item (click)="openEnd()">Close</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+
+
+
+<ion-item>
+  <ion-col><h1 class="title">Ranking</h1></ion-col>
+  <ion-col><h1 class="title"></h1></ion-col>
+  <ion-col><ion-icon (click)="reload()" name="refresh-outline"></ion-icon></ion-col>
+</ion-item>
+
+
+<div  class="content" style="margin-bottom: 5%;">
+
+
+    <h2>Filter</h2>
+    <ion-item>
+      <ion-label>Faction</ion-label>
+      <ion-select id="factionFilter" placeholder="Select One">
+        <ion-select-option value="China">China</ion-select-option>
+        <ion-select-option value="USMC">USMC</ion-select-option>
+        <ion-select-option value="MEC">MEC</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input id="emailFilter"></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label>Name</ion-label>
+      <ion-input id="nameFilter" style="margin-bottom: 2%;"></ion-input>
+    </ion-item>
+   
+  
+
+    <ion-button (click)="search()">filtrar
+   </ion-button>
+
+
+</div>
+
+
+<ion-row style="background-color:rgba(245, 245, 245, 0.856) ; color:#080808">
+  <ion-col><ion-label>Rank</ion-label></ion-col>
+  <ion-col><ion-label>Guerrilla</ion-label></ion-col>
+  <ion-col><ion-label>Action</ion-label></ion-col>
+</ion-row>
+
+
+  <ion-list>
+
+  <ion-item *ngFor="let item of data">
+    <ion-col><ion-label>{{item.rank}}</ion-label></ion-col> <ion-col><ion-label>{{item.name}}</ion-label></ion-col><ion-col><ion-button *ngIf="this.name2!=item.name" (click)="goToMatch(item.name)">Attack</ion-button></ion-col>
+  </ion-item>
+  
+
+  </ion-list>
+
+</ion-content>
+

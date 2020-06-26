@@ -1,0 +1,58 @@
+
+
+<ion-router-outlet id="main"></ion-router-outlet>
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="openEnd()">
+      <ion-icon  name="menu"></ion-icon>
+    </ion-button>  
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  
+<ion-menu side="start" contentId="main">
+  <ion-header>
+    <ion-toolbar color="#e20d0d">
+      <ion-title style="color:#e20d0d;">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="goToMenu()">Profile</ion-item>
+      <ion-item (click)="goToRanking()">Ranking</ion-item>
+      <ion-item (click)="goToSettings()">Settings</ion-item>
+      <ion-item (click)="goOut()">Logout</ion-item>
+      <ion-item (click)="openEnd()">Close</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+  <h1 class="title">
+    Settings
+  </h1>
+
+ 
+
+    <div class="content">
+      <ion-label>Example http://localhost:3000/</ion-label>
+      <br>
+      <br>
+     <ion-item>
+      <ion-input type="text" id="ip" placeholder="ip:port/"></ion-input>
+     </ion-item>
+   
+        <br>
+   
+        <ion-button (click)="connect()">Connect</ion-button>
+          
+        <br>
+  
+        
+ 
+    </div>
+    <div  class="content2">
+      <ion-label>To back to the original server just reload the page</ion-label>
+    </div>
+</ion-content>

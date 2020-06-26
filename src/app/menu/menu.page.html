@@ -1,0 +1,118 @@
+
+ 
+<ion-router-outlet id="main"></ion-router-outlet>
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="openEnd()">
+      <ion-icon  name="menu"></ion-icon>
+    </ion-button>  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+<ion-menu side="start"  contentId="main">
+  <ion-header>
+    <ion-toolbar color="#e20d0d">
+      <ion-title style="color:#e20d0d;">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="goToMenu()">Profile</ion-item>
+      <ion-item (click)="goToRanking()">Ranking</ion-item>
+      <ion-item (click)="goToSettings()">Settings</ion-item>
+      <ion-item (click)="goOut()">Logout</ion-item>
+      <ion-item (click)="openEnd()">Close</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<h1 class="title">{{username}}</h1>
+
+<div class="content2">
+
+  <div id="countdown">
+    <div id="countdown-number">{{timer}}</div>
+    <svg>
+      <circle r="18" cx="20" cy="20"></circle>
+    </svg>
+  </div>
+
+
+<ion-row >
+    <ion-col><ion-label >Oil</ion-label></ion-col>
+    <ion-col><ion-label id="myOil">{{myOil}}</ion-label></ion-col>
+</ion-row>
+
+<ion-row>
+  <ion-col><ion-label>Money</ion-label></ion-col>
+  <ion-col><ion-label >{{myMoney}}</ion-label></ion-col>
+</ion-row>
+
+<ion-row>
+  <ion-col><ion-label>People</ion-label></ion-col>
+  <ion-col><ion-label>{{myPeople}}</ion-label></ion-col>
+</ion-row>
+
+</div>
+<div class="content3">
+  <ion-row>
+    <ion-col><ion-label>{{this.actual}}</ion-label></ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col><ion-button (click)="showDefense()">Defense</ion-button></ion-col>
+    <ion-col><ion-button (click)="showOffense()">Offense</ion-button></ion-col>
+  </ion-row>
+
+  <div *ngIf="this.offense" class="content4">
+    <ion-row style="background-color:#1f1f1f ; color:rgba(245, 245, 245, 0.973)">
+      <ion-col><ion-label>Units</ion-label></ion-col>
+      <ion-col><ion-label>Quantity</ion-label></ion-col>
+      <ion-col><ion-label>Buy</ion-label></ion-col>
+      </ion-row>
+    <br>
+    <ion-row>
+    <ion-col><ion-label>Assault</ion-label></ion-col>
+    <ion-col><ion-label>{{myAssault}}</ion-label></ion-col>
+    <ion-col><ion-button  (click)="buyAssault()">+</ion-button>&nbsp;&nbsp;<ion-label >{{assaultToBuy}}</ion-label></ion-col>
+    </ion-row>
+    <br>
+    <ion-row>
+      <ion-col><ion-label>Tanks</ion-label></ion-col>
+      <ion-col><ion-label>{{myTank}}</ion-label></ion-col>
+      <ion-col><ion-button class="button"  (click)="buyTank()">+</ion-button>&nbsp;&nbsp;<ion-label >{{tankToBuy}}</ion-label></ion-col>
+    </ion-row>
+    <br>
+    <ion-row>
+        <ion-col><ion-label>Engineer</ion-label></ion-col>
+        <ion-col><ion-label >{{myEngineer}}</ion-label></ion-col>
+        <ion-col><ion-button  (click)="buyEngineer()">+</ion-button>&nbsp;&nbsp;<ion-label >{{engineerToBuy}}</ion-label></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><ion-button (click)="alertToBuy()">Comprar</ion-button></ion-col>
+    </ion-row>
+   
+  </div>
+  <div *ngIf="this.defense" class="content4">
+    <ion-row style="background-color:#1f1f1f ; color:rgba(245, 245, 245, 0.973)">
+      <ion-col><ion-label>Units</ion-label></ion-col>
+      <ion-col><ion-label>Quantity</ion-label></ion-col>
+      <ion-col><ion-label>Buy</ion-label></ion-col>
+      </ion-row>
+    <br>
+    <ion-row>
+      <ion-col><ion-label>Bunkers</ion-label></ion-col>
+      <ion-col><ion-label >{{myBunker}}</ion-label></ion-col>
+      <ion-col><ion-button (click)="buyBunker()">+</ion-button>&nbsp;&nbsp;<ion-label >{{bunkerToBuy}}</ion-label></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col ><ion-button (click)="alertToBuy()">Comprar</ion-button></ion-col>
+    </ion-row>
+   
+  </div>
+</div>
+
+</ion-content>
+
+

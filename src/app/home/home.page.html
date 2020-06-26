@@ -1,20 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Web Guerilla
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  
+  <h1 class="title">
+    Login
+  </h1>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-img  class="imgItem" src="../assets/logo.png"></ion-img>
+
+    <div class="content">
+   
+     <ion-item>
+      <ion-input [(ngModel)]="userData" id="email" placeholder="Email"></ion-input>
+     </ion-item>
+       
+     <br>
+     <br>
+     
+        <ion-button (click)="login()">Login</ion-button>
+     
+
+    </div>
 </ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-label>Login</ion-label>
+      <ion-icon name="log-in-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button (click)="goToRegister()" tab="register">
+      <ion-label>Register</ion-label>
+      <ion-icon name="document-text-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

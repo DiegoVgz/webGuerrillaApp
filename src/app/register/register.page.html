@@ -1,0 +1,62 @@
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Web Guerilla
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  
+  
+  <h1 style="text-align: center;margin-top: 2%;">
+    Register
+  </h1>
+
+    <ion-img  class="imgItem" src="../assets/logo.png"></ion-img>
+ 
+  
+
+    <div class="content">
+
+   
+     <ion-item>
+      <ion-input type="email" id="emailRegister" placeholder="Email"></ion-input>
+     </ion-item>
+     <br>
+     <ion-item>
+      <ion-input type="text"  id="nameRegister" placeholder="Nickname"></ion-input>
+     </ion-item>
+     <br>
+     <ion-item>
+      <ion-label>Faction</ion-label>
+      <ion-select id="factionRegister" placeholder="Select One">
+        <ion-select-option value="China">China</ion-select-option>
+        <ion-select-option value="USMC">USMC</ion-select-option>
+        <ion-select-option value="MEC">MEC</ion-select-option>
+      </ion-select>
+     </ion-item>
+       
+     <br>
+        <ion-button (click)='login()'>Register</ion-button>
+     
+
+    </div>
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button (click)="goToLogin()" tab="home">
+      <ion-label>Login</ion-label>
+      <ion-icon name="log-in-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="register">
+      <ion-label>Register</ion-label>
+      <ion-icon name="document-text-outline"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
