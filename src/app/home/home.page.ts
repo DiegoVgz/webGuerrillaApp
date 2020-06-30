@@ -2,6 +2,7 @@ import { Component, Input,ViewChild, ElementRef ,Inject} from '@angular/core';
 import { Router } from '@angular/router';
 import { RestService } from '../services/rest.service';
 import { DOCUMENT } from '@angular/common';
+import { AlertController } from '@ionic/angular';
 
 
 
@@ -20,7 +21,7 @@ export class HomePage {
   logout:any
 
 
-  constructor(private router:Router, public rest:RestService,@Inject(DOCUMENT) document) {
+  constructor(private router:Router, public rest:RestService,@Inject(DOCUMENT) document,public alertController: AlertController) {
    
 
   }
@@ -39,7 +40,7 @@ export class HomePage {
   }
 
 
-  login(){
+  login1(){
 
  var userData=(<HTMLInputElement>document.getElementById("email")).value;
     if(userData!=''){
@@ -51,6 +52,7 @@ export class HomePage {
       this.rest.login(user).subscribe((data) =>{
 
 
+        console.log(data);
       
         if(JSON.stringify(data)=='{"400":"Bad request"}'){
 
@@ -70,9 +72,21 @@ export class HomePage {
       });
   
     }else{
-      alert("Insert email please");
+      this.presentAlert();
     }
 
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      cssClass: "my-custom-class",
+      header: "Alert",
+      subHeader: "Insert email please",
+      message: "",
+      buttons: ["OK"],
+    });
+
+    await alert.present();
   }
 }
 

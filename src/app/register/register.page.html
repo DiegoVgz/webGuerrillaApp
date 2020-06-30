@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="home-container" overflow-scroll="true">
   
 
   
@@ -42,14 +42,26 @@
      </ion-item>
        
      <br>
-        <ion-button (click)='login()'>Register</ion-button>
-     
 
+     <ion-item style="text-align: center;">
+      <ion-col>
+        <ion-button (click)='login()'>Register</ion-button>
+      </ion-col>
+     </ion-item>
+     <br>
+     <br>
     </div>
+
+    <div class="ribbon">
+
+
+      
+    </div>
+
 </ion-content>
 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
+
+  <ion-tab-bar slot="bottom" id="taps">
     <ion-tab-button (click)="goToLogin()" tab="home">
       <ion-label>Login</ion-label>
       <ion-icon name="log-in-outline"></ion-icon>
@@ -59,4 +71,4 @@
       <ion-icon name="document-text-outline"></ion-icon>
     </ion-tab-button>
   </ion-tab-bar>
-</ion-tabs>
+

@@ -6,31 +6,48 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
+<ion-content class="home-container" overflow-scroll="true">
+
   <h1 class="title">
     Login
   </h1>
 
-    <ion-img  class="imgItem" src="../assets/logo.png"></ion-img>
+  <ion-img class="imgItem" src="../assets/logo.png"></ion-img>
 
-    <div class="content">
-   
-     <ion-item>
+  <div class="content">
+
+    <ion-item>
       <ion-input [(ngModel)]="userData" id="email" placeholder="Email"></ion-input>
-     </ion-item>
-       
-     <br>
-     <br>
-     
-        <ion-button (click)="login()">Login</ion-button>
-     
+    </ion-item>
 
-    </div>
+    <br>
+    <br>
+
+    <ion-item style="text-align: center;">
+    <ion-col>
+      <ion-button (click)="login1()">Login</ion-button>
+  
+    </ion-col>
+
+    </ion-item>
+
+    <br>
+    <br>
+
+  </div>
+
+
+  <div class="ribbon2">
+
+
+      
+  </div>
+
+
 </ion-content>
 
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
+
+  <ion-tab-bar slot="bottom" id="taps">
     <ion-tab-button tab="home">
       <ion-label>Login</ion-label>
       <ion-icon name="log-in-outline"></ion-icon>
@@ -40,4 +57,3 @@
       <ion-icon name="document-text-outline"></ion-icon>
     </ion-tab-button>
   </ion-tab-bar>
-</ion-tabs>

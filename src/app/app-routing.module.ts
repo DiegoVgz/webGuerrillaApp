@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RegisterPage } from './register/register.page';
 import { HomePage } from './home/home.page';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home-routing.module').then( m => m.HomePageRoutingModule),
+    component:HomePage,
+    pathMatch: 'full'
   },
-
   {
     path: '',
-    redirectTo:'home',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
     path: 'register',
-    loadChildren: () => import('./register/register-routing.module').then( m => m.RegisterPageRoutingModule)
+    component: RegisterPage,
+    pathMatch: 'full'
   },
-
   {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
@@ -36,13 +37,11 @@ const routes: Routes = [
     loadChildren: () => import('./connect/connect.module').then( m => m.ConnectPageModule)
   },
 
-
-
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes,{ onSameUrlNavigation: 'reload'})
+    RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
 })

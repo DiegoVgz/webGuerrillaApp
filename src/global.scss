@@ -191,6 +191,41 @@
        
     }
 
+    #backgraund-cotent{
+    
+        overflow-y : auto;
+    }
+
+    .home-container{
+
+     
+        overflow-y : auto;
+    }
+
+    .ribbon{
+        height: 85px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    .ribbon2{
+        height: 185px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    
+    #index{
+        height: 80%;
+        overflow-y : auto;
+       
+    }
+
+    .scroll-content {
+        padding-bottom: 0 !important;
+    }
+    .ionic-content {
+        --offset-bottom: 0 !important;
+     }
+
     --ion-color-primary: #e20d0d;
     --ion-color-primary-rgb: 66,140,255;
     --ion-color-primary-contrast: #ffffff;

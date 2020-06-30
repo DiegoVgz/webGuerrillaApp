@@ -24,6 +24,8 @@ export class RestService {
   private enemy = new BehaviorSubject('error');
   public currentEnemy = this.enemy.asObservable();
 
+  //https://guerrilla-api-b78225.herokuapp.com/
+  //http://localhost:3000/
   private endPoint = new BehaviorSubject('https://guerrilla-api-b78225.herokuapp.com/');
   public currentendPoint= this.endPoint.asObservable();
 
